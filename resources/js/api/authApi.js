@@ -6,7 +6,7 @@ export const useLoginMutation = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (credentials) => {
-            const response = await api.post('/login', credentials);
+            const response = await api.post('/auth/login', credentials);
             return response.data;
         },
         onSuccess: (data) => {
@@ -24,7 +24,7 @@ export const useRegisterMutation = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (userData) => {
-            const response = await api.post('/register', userData);
+            const response = await api.post('/auth/register', userData);
             return response.data;
         },
         onSuccess: (data) => {
@@ -42,7 +42,7 @@ export const useLogoutMutation = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async () => {
-            const response = await api.post('/logout');
+            const response = await api.post('/auth/logout');
             return response.data;
         },
         onSettled: () => {

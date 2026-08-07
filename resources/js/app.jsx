@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginForm from './components/auth/LoginForm';
@@ -33,6 +33,7 @@ const ProtectedRoute = ({ children }) => {
 
 const AuthLayout = ({ children }) => {
     const { isAuthenticated, isUserLoading } = useAuth();
+    const navigate = useNavigate();
     
     if (isUserLoading) return null;
     
@@ -41,10 +42,22 @@ const AuthLayout = ({ children }) => {
     }
     
     return (
-        <div className="min-h-screen flex items-center justify-center p-4 bg-[#0B0F14] relative overflow-hidden font-sans">
-            <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#14B8A6]/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="relative z-10 w-full flex justify-center">
-                {children}
+        <div className="relative min-h-screen">
+            {/* Landing page displays first in background */}
+            <LandingView />
+
+            {/* Auth Modal Backdrop */}
+            <div 
+                className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm transition-all animate-in fade-in duration-200"
+                onClick={(e) => {
+                    if (e.target === e.currentTarget) {
+                        navigate('/');
+                    }
+                }}
+            >
+                <div className="relative w-full max-w-md">
+                    {children}
+                </div>
             </div>
         </div>
     );
