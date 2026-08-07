@@ -4,6 +4,85 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
-        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+    
+    --color-bg-app: #0B0F14;
+    --color-bg-sidebar: #0D1218;
+    --color-bg-navbar: #11161D;
+    --color-bg-surface: #141A22;
+    --color-bg-surface-alt: #171D26;
+    --color-bg-surface-raised: #1B222C;
+    
+    --color-border-subtle: #232B36;
+    --color-border-strong: #2E3844;
+    
+    --color-accent-teal: #14B8A6;
+    --color-accent-teal-dark: #0D9488;
+    --color-accent-teal-bg: #0F2E2A;
+    
+    --color-accent-violet: #7C3AED;
+    --color-accent-violet-soft: #3B2A5C;
+    
+    --color-status-success: #10B981;
+    --color-status-success-bg: #0E3B2E;
+    --color-status-fail: #F43F5E;
+    --color-status-fail-bg: #3A1220;
+    --color-status-pending: #F59E0B;
+    
+    --color-text-primary: #F5F7FA;
+    --color-text-secondary: #9AA5B1;
+    --color-text-tertiary: #6B7684;
+    --color-text-on-accent: #FFFFFF;
+    --color-text-danger: #F43F5E;
 }
+
+:root {
+  /* Surfaces */
+  --bg-app: #0B0F14;
+  --bg-sidebar: #0D1218;
+  --bg-navbar: #11161D;
+  --bg-surface: #141A22;
+  --bg-surface-alt: #171D26;
+  --bg-surface-raised: #1B222C;
+  --border-subtle: #232B36;
+  --border-strong: #2E3844;
+
+  /* Accent */
+  --accent-teal: #14B8A6;
+  --accent-teal-dark: #0D9488;
+  --accent-teal-bg: #0F2E2A;
+  --accent-violet: #7C3AED;
+  --accent-violet-soft: #3B2A5C;
+
+  /* Status */
+  --status-success: #10B981;
+  --status-success-bg: #0E3B2E;
+  --status-fail: #F43F5E;
+  --status-fail-bg: #3A1220;
+  --status-pending: #F59E0B;
+
+  /* Text */
+  --text-primary: #F5F7FA;
+  --text-secondary: #9AA5B1;
+  --text-tertiary: #6B7684;
+  --text-on-accent: #FFFFFF;
+  --text-danger: #F43F5E;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Font */
+  --font-family: 'Inter', -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+}
+
