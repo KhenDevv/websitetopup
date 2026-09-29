@@ -70,16 +70,11 @@ const LoginForm = () => {
                         <label className="block text-xs font-semibold text-[#98a2b3]">
                             Password
                         </label>
-                        <a
-                            href="#"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                alert('Password reset is not implemented in this demo.');
-                            }}
+                        <Link
                             className="text-xs font-medium text-[#98a2b3] hover:text-[#00f2c3] transition-colors"
                         >
                             Forgot Password?
-                        </a>
+                        </Link>
                     </div>
                     <div className="relative flex items-center">
                         <Lock className="absolute left-3.5 w-4 h-4 text-[#667085]" />

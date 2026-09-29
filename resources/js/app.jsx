@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginForm from './components/auth/LoginForm';
 import RegisterForm from './components/auth/RegisterForm';
+import ForgotPasswordForm from './components/auth/ForgotPasswordForm';
 import DashboardView from './components/dashboard/DashboardView';
 import LandingView from './components/landing/LandingView';
 import { Loader2 } from 'lucide-react';
@@ -85,6 +86,7 @@ const AppContent = () => {
             {/* Auth Routes */}
             <Route path="/login" element={<AuthLayout><LoginForm /></AuthLayout>} />
             <Route path="/register" element={<AuthLayout><RegisterForm /></AuthLayout>} />
+            <Route path="/forgot-password" element={<AuthLayout><ForgotPasswordForm /></AuthLayout>} />
             
             {/* Dashboard Page (Logged in state) */}
             <Route path="/dashboard" element={

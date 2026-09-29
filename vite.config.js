@@ -2,6 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
     // Use project root as Vite root so index.html is picked up natively
@@ -17,7 +20,7 @@ export default defineConfig({
 
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'resources/js'),
+            '@': path.resolve(projectRoot, 'resources/js'),
         },
     },
 
